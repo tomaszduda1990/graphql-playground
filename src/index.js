@@ -2,28 +2,36 @@ import { GraphQLServer } from 'graphql-yoga';
 
 const demoPostData = [{
 		id: 'ID!',
-		postedBy: "User!",
+		author: {
+			id: '123asd'
+		},
 		title: "String!",
 		body: "String!",
 		published: false
 },
 {
 		id: 'IDqweqd!',
-		postedBy: "Suepsd!",
+		author: {
+				id: '123asd'
+		},
 		title: "aeas!",
 		body: "asdpasdaposdaposdiapsodi aisdpo aispod iaspd!",
 		published: true
 },
 {
 		id: 'ID121231!',
-		postedBy: "User123sd21!",
+		author: {
+			id: '312123'
+		},
 		title: "Strin12eg!",
 		body: "Strin asdas dasd asd asd asd asd zcxcsdg!",
 		published: true
 },
 {
 		id: 'ID21e3!',
-		postedBy: "Uqweqweqser!",
+		author: {
+			id: '312123'
+		},
 		title: "Strweqweing!",
 		body: "asdasdas!",
 		published: true
@@ -69,7 +77,7 @@ const typeDefs = `
 
 	type Post {
 		id: ID!
-		postedBy: User!
+		author: User!
 		title: String!
 		body: String!
 		published: Boolean
@@ -91,7 +99,7 @@ const resolvers = {
 				id: "123ass",
 				body: "this is chamski post",
 				published: false,
-				postedBy: {
+				author: {
 					id: "asdq3as23"
 				}
 			}),
